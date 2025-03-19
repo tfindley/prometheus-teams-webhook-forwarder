@@ -4,7 +4,7 @@
 
 This webhook forwader is designed to handle posting webhooks between AlertManager and Microsoft Teams following the change to the way Microsoft are allowing webhooks. This forwarder will reformat the standard AlertManager output and paste it to Microsoft Temas
 
-## Dislaimer
+## Disclaimer
 
 This script was written largely in conjunction with ChatGPT. This was a quick and dirty solution that *should* work.
 
@@ -266,3 +266,13 @@ curl -X POST "http://your-webhook-server:8000/alertmanager_teams" \
     "runbook_url": "https://example.com/runbook"
   }'
 ```
+
+## Author Information
+
+**Tristan Findley**
+
+Find out more about me [here](https://tfindley.co.uk).
+
+If you're fan of my work and would like to show your support:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z016573P)
