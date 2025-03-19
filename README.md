@@ -129,7 +129,7 @@ Note that the 'auth' field is optional, but recommended.
 - Change ownership of all files
 
 ```bash
-sudo chmod -R webhook-forwarder: /opt/webhook-forwarder
+sudo chown -R webhook-forwarder: /opt/webhook-forwarder
 ```
 
 - Copy the service file into systemd, set its permissions, reload systemd and start/enable the service
