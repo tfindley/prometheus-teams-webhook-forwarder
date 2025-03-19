@@ -2,7 +2,7 @@
 
 ## Preface
 
-This webhook forwader is designed to handle posting webhooks between AlertManager and Microsoft Teams following the change to the way Microsoft are allowing webhooks. This forwarder will reformat the standard AlertManager output and paste it to Microsoft Temas
+This webhook forwarder is designed to handle posting webhooks between AlertManager and Microsoft Teams following the change to the way Microsoft are allowing webhooks. This forwarder will reformat the standard AlertManager output and paste it to Microsoft Teams
 
 ## Disclaimer
 
@@ -14,7 +14,7 @@ This script was written largely in conjunction with ChatGPT. This was a quick an
 - **main.py** - Python script
 - **README.md** - This file
 - **requirements.txt** - Python requirements file (generated from pip freeze)
-- **webhook-forwader.service** - Service file to be installed in /etc/systemd/system/
+- **webhook-forwarder.service** - Service file to be installed in /etc/systemd/system/
 
 ## Requirements
 
@@ -31,18 +31,18 @@ This forwarder has been tested on Ubuntu 24.04 and RHEL 9, but should work on ot
 ### Manual execution
 
 ```bash
-sudo mkdir /opt/webhook-forwader
+sudo mkdir /opt/webhook-forwarder
 ```
 
 - Create the python virtual environment
 
 ```bash
-python3 -m venv /opt/webhook-forwader/.venv
+python3 -m venv /opt/webhook-forwarder/.venv
 ```
 
 - Activate the Python Virtual Environment
 ```bash
-. /opt/webhook-forwader/.venv/bin/activate
+. /opt/webhook-forwarder/.venv/bin/activate
 ```bash
 
 - Upgrade PIP and Install the python requirements
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 deactivate
 ```
 
-- Download the main.py file into /opt/webhook-forwader
+- Download the main.py file into /opt/webhook-forwarder
 
 - Make file executable
 
@@ -68,28 +68,28 @@ sudo chmod +x /opt/webhook-forwarder
 
 ### As a service - systemd
 
-- Create a new system user for the webhook forwader
+- Create a new system user for the webhook forwarder
 
 ```bash
 sudo useradd --system --no-create-home --shell /sbin/nologin webhook-forwarder
 ```
 
-- Create a webhook-forwader directory in /opt
+- Create a webhook-forwarder directory in /opt
 
 ```bash
-sudo mkdir /opt/webhook-forwader
+sudo mkdir /opt/webhook-forwarder
 ```
 
 - Create the python virtual environment
 
 ```bash
-python3 -m venv /opt/webhook-forwader/.venv
+python3 -m venv /opt/webhook-forwarder/.venv
 ```
 
 - Activate the Python Virtual Environment
 
 ```bash
-. /opt/webhook-forwader/.venv/bin/activate
+. /opt/webhook-forwarder/.venv/bin/activate
 ```
 
 - Upgrade PIP and Install the python requirements
@@ -105,7 +105,7 @@ pip install -r requirements.txt
 deactivate
 ```
 
-- Download the main.py file into /opt/webhook-forwader
+- Download the main.py file into /opt/webhook-forwarder
 
 - Make file executable
 
@@ -113,7 +113,7 @@ deactivate
 sudo chmod +x /opt/webhook-forwarder
 ```
 
-- Create the configuration file - `/opt/webhook-forwader/config.yaml`
+- Create the configuration file - `/opt/webhook-forwarder/config.yaml`
 
 ```yaml
 webhook1:
@@ -129,7 +129,7 @@ Note that the 'auth' field is optional, but recommended.
 - Change ownership of all files
 
 ```bash
-sudo chmod -R webhook-forwader: /opt/webhook-forwader
+sudo chmod -R webhook-forwarder: /opt/webhook-forwarder
 ```
 
 - Copy the service file into systemd, set its permissions, reload systemd and start/enable the service
