@@ -135,8 +135,8 @@ sudo chown -R webhook-forwarder: /opt/webhook-forwarder
 - Copy the service file into systemd, set its permissions, reload systemd and start/enable the service
 
 ```bash
-sudo cp webhook-forwarder.service /etc/systemd/system/webhook/webhook-forwarder.service
-sudo chown root: /etc/systemd/system/webhook/webhook-forwarder.service
+sudo cp webhook-forwarder.service /etc/systemd/system/webhook-forwarder.service
+sudo chown root: /etc/systemd/system/webhook-forwarder.service
 sudo systemctl daemon-reload
 sudo systemctl enable webhook-forwarder
 sudo systemctl start webhook-forwarder
