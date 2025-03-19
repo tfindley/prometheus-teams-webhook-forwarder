@@ -1,0 +1,7 @@
+webhook1:
+  teams_url: "https://prod-105.westeurope.logic.azure.com:443/workflows/..."
+  auth: "mysecrettoken"
+
+webhook2:
+  teams_url: "http://localhost:8080"
+
