@@ -2,8 +2,15 @@
 
 ## Preface
 
+This webhook forwader is designed to handle posting webhooks between AlertManager and Microsoft Teams following the change to the way Microsoft are allowing webhooks. This forwarder will reformat the standard AlertManager output and paste it to Microsoft Temas
+
+## Dislaimer
+
+This script was written largely in conjunction with ChatGPT. This was a quick and dirty solution that *should* work.
+
 ## File Breakdown
 
+- **config.yaml** - Configuration file which stores your destination webhook, and a basic bearer authentication for the inbound webhook
 - **main.py** - Python script
 - **README.md** - This file
 - **requirements.txt** - Python requirements file (generated from pip freeze)
@@ -80,9 +87,10 @@ python3 -m venv /opt/webhook-forwader/.venv
 ```
 
 - Activate the Python Virtual Environment
+
 ```bash
 . /opt/webhook-forwader/.venv/bin/activate
-```bash
+```
 
 - Upgrade PIP and Install the python requirements
 
